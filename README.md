@@ -58,7 +58,7 @@ ESP32-S2	✅ Tested & optimized
 💡 Example Code
 
 
-'''cpp
+```cpp
 #include <Adafruit_GFX.h>
 #include <Adafruit_SPFD54124B.h>
 #include <Fonts/FreeSerif9pt7b.h>
@@ -113,9 +113,9 @@ void setup(void)
     display.print("Hello");
 }
 
-void loop() {}'''
+void loop() {}
+```
 
----
 
 🖼️ Preview Images
 
