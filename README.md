@@ -60,7 +60,7 @@ ESP32-S2	✅ Tested & optimized
 
 ```cpp
 #include <Adafruit_GFX.h>
-#include <Adafruit_SPFD54124B.h>
+#include <Amirhm_e_SPFD54124B.h>
 #include <Fonts/FreeSerif9pt7b.h>
 #include <Fonts/FreeSansBoldOblique24pt7b.h>
 
@@ -78,7 +78,7 @@ ESP32-S2	✅ Tested & optimized
 #define YELLOW          0xFFE0
 #define WHITE           0xFFFF
 
-Adafruit_SPFD54124B display(TFT_DATA,TFT_CLK,TFT_RESET, TFT_CS);
+Amirhm_e_SPFD54124B display(TFT_DATA,TFT_CLK,TFT_RESET, TFT_CS);
 
 void setup(void)
 {

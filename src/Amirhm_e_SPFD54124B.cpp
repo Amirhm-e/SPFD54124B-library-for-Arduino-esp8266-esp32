@@ -15,9 +15,9 @@
 #include "SPI.h"
 
 #include "Adafruit_GFX.h"
-#include "Adafruit_SPFD54124B.h"
+#include "Amirhm_e_SPFD54124B.h"
 
-Adafruit_SPFD54124B::Adafruit_SPFD54124B(int8_t SID, int8_t SCLK, int8_t RST, int8_t CS) : Adafruit_GFX(SPFD54124B_LCDWIDTH, SPFD54124B_LCDHEIGHT)
+Amirhm_e_SPFD54124B::Amirhm_e_SPFD54124B(int8_t SID, int8_t SCLK, int8_t RST, int8_t CS) : Adafruit_GFX(SPFD54124B_LCDWIDTH, SPFD54124B_LCDHEIGHT)
 {
     sid = SID;
     sclk = SCLK;
@@ -26,7 +26,7 @@ Adafruit_SPFD54124B::Adafruit_SPFD54124B(int8_t SID, int8_t SCLK, int8_t RST, in
     hwSPI = false;
 }
 
-Adafruit_SPFD54124B::Adafruit_SPFD54124B(int8_t RST, int8_t CS) : Adafruit_GFX(SPFD54124B_LCDWIDTH, SPFD54124B_LCDHEIGHT)
+Amirhm_e_SPFD54124B::Amirhm_e_SPFD54124B(int8_t RST, int8_t CS) : Adafruit_GFX(SPFD54124B_LCDWIDTH, SPFD54124B_LCDHEIGHT)
 {
     sid = -1;
     sclk = -1;
@@ -35,7 +35,7 @@ Adafruit_SPFD54124B::Adafruit_SPFD54124B(int8_t RST, int8_t CS) : Adafruit_GFX(S
     hwSPI = true;
 }
 
-void Adafruit_SPFD54124B::writeCommand(uint8_t c)
+void Amirhm_e_SPFD54124B::writeCommand(uint8_t c)
 {
     // Prepend leading bit instead of using D/C pin
     if (hwSPI)
@@ -132,7 +132,7 @@ void Adafruit_SPFD54124B::writeCommand(uint8_t c)
 
 }
 
-void Adafruit_SPFD54124B::writeData(uint8_t c)
+void Amirhm_e_SPFD54124B::writeData(uint8_t c)
 {
     //c=0x00;
     // Prepend leading bit instead of using D/C pin
@@ -276,7 +276,7 @@ PROGMEM static const unsigned char
         SPFD54124B_N_RAMWR, 0       // 14: Start GRAM write
 };
 
-void Adafruit_SPFD54124B::begin()
+void Amirhm_e_SPFD54124B::begin()
 {
     // set pin directions, set pins low by default (except reset)
 
@@ -371,7 +371,7 @@ void Adafruit_SPFD54124B::begin()
     _cs_set();
 }
 
-void Adafruit_SPFD54124B::setWindow(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1)
+void Amirhm_e_SPFD54124B::setWindow(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1)
 {
     uint8_t t0, t1;
     _cs_clr();
@@ -422,7 +422,7 @@ void Adafruit_SPFD54124B::setWindow(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t 
 }
 
 // clear everything
-void Adafruit_SPFD54124B::fillScreen(uint16_t c)
+void Amirhm_e_SPFD54124B::fillScreen(uint16_t c)
 {
     uint8_t x, y, hi = c >> 8, lo = c;
 
@@ -443,7 +443,7 @@ void Adafruit_SPFD54124B::fillScreen(uint16_t c)
 }
 
 // Used by BMP-reading sketch
-void Adafruit_SPFD54124B::pushColor(uint16_t color)
+void Amirhm_e_SPFD54124B::pushColor(uint16_t color)
 {
     _cs_clr();
 
@@ -454,7 +454,7 @@ void Adafruit_SPFD54124B::pushColor(uint16_t color)
 }
 
 // the most basic function, set a single pixel
-void Adafruit_SPFD54124B::drawPixel(int16_t x, int16_t y, uint16_t color)
+void Amirhm_e_SPFD54124B::drawPixel(int16_t x, int16_t y, uint16_t color)
 {
     if ((x < 0) || (x >= _width) || (y < 0) || (y >= _height))
         return;
@@ -466,7 +466,7 @@ void Adafruit_SPFD54124B::drawPixel(int16_t x, int16_t y, uint16_t color)
     _cs_set();
 }
 
-void Adafruit_SPFD54124B::drawFastVLine(int16_t x, int16_t y, int16_t h, uint16_t color)
+void Amirhm_e_SPFD54124B::drawFastVLine(int16_t x, int16_t y, int16_t h, uint16_t color)
 {
 
     if ((x < 0) || (x >= _width) // Fully off left or right
@@ -494,7 +494,7 @@ void Adafruit_SPFD54124B::drawFastVLine(int16_t x, int16_t y, int16_t h, uint16_
     _cs_set();
 }
 
-void Adafruit_SPFD54124B::drawFastHLine(int16_t x, int16_t y, int16_t w,
+void Amirhm_e_SPFD54124B::drawFastHLine(int16_t x, int16_t y, int16_t w,
                                         uint16_t color)
 {
 
@@ -523,7 +523,7 @@ void Adafruit_SPFD54124B::drawFastHLine(int16_t x, int16_t y, int16_t w,
     _cs_set();
 }
 
-void Adafruit_SPFD54124B::fillRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t color)
+void Amirhm_e_SPFD54124B::fillRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t color)
 {
     // rudimentary clipping (drawChar w/big text requires this)
     if ((x >= _width) || (y >= _height))
@@ -564,7 +564,7 @@ void Adafruit_SPFD54124B::fillRect(int16_t x, int16_t y, int16_t w, int16_t h, u
 }
 
 // Pass 8-bit (each) R,G,B, get back 16-bit packed color
-uint16_t Adafruit_SPFD54124B::Color565(uint8_t r, uint8_t g, uint8_t b)
+uint16_t Amirhm_e_SPFD54124B::Color565(uint8_t r, uint8_t g, uint8_t b)
 {
     return ((r & 0xF8) << 8) | ((g & 0xFC) << 3) | (b >> 3);
 }

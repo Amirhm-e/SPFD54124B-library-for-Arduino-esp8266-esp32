@@ -6,8 +6,8 @@
 
 #include "Adafruit_GFX.h"
 
-#ifndef ADAFRUIT_SPFD54124B
-#define ADAFRUIT_SPFD54124B
+#ifndef AMIRHM_E_SPFD54124B
+#define AMIRHM_E_SPFD54124B
 
 #define SPFD54124B_LCDWIDTH                  130
 #define SPFD54124B_LCDHEIGHT                 161
@@ -72,10 +72,10 @@
 #define _cs_set()	digitalWrite((cs), 1)
 #define _cs_clr()	digitalWrite((cs), 0)
 
-class Adafruit_SPFD54124B : public Adafruit_GFX {
+class Amirhm_e_SPFD54124B : public Adafruit_GFX {
 	public:
-  		Adafruit_SPFD54124B(int8_t SID, int8_t SCLK, int8_t RST, int8_t CS);
-  		Adafruit_SPFD54124B(int8_t RST, int8_t CS);
+  		Amirhm_e_SPFD54124B(int8_t SID, int8_t SCLK, int8_t RST, int8_t CS);
+  		Amirhm_e_SPFD54124B(int8_t RST, int8_t CS);
 
 		void	begin(),
     			setWindow(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1),
