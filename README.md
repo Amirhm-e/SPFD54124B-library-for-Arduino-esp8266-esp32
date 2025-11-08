@@ -57,7 +57,9 @@ ESP32-S2	✅ Tested & optimized
 
 💡 Example Code
 
-'''#include <Adafruit_GFX.h>
+
+'''cpp
+#include <Adafruit_GFX.h>
 #include <Adafruit_SPFD54124B.h>
 #include <Fonts/FreeSerif9pt7b.h>
 #include <Fonts/FreeSansBoldOblique24pt7b.h>
@@ -113,22 +115,27 @@ void setup(void)
 
 void loop() {}'''
 
-
 ---
 
 🖼️ Preview Images
 
 SPFD54124B Display
-![SPFD54124B Display](images/photo_2025-11-08_11-52-28.jpg)
 
+---------------------------------------------------------
+![SPFD54124B Display](images/photo_2025-11-08_11-52-28.jpg)
+---------------------------------------------------------
 
 ESP32-S2 Mini Pinout
-![ESP32-S2 Mini Pinout](images/photo_2025-11-08_11-52-31.jpg)
 
+---------------------------------------------------------
+![ESP32-S2 Mini Pinout](images/photo_2025-11-08_11-52-31.jpg)
+---------------------------------------------------------
 
 ESP8266 Board
-![ESP8266 Board](images/photo_2025-11-08_11-52-35.jpg)
 
+---------------------------------------------------------
+![ESP8266 Board](images/photo_2025-11-08_11-52-35.jpg)
+---------------------------------------------------------
 
 
 ---
@@ -197,17 +204,23 @@ git clone https://github.com/Amirhm-e/SPFD54124B-library-for-Arduino-esp8266-esp
 📷 تصاویر
 
 نمایشگر	
-![SPFD54124B Display](images/photo_2025-11-08_11-52-28.jpg)
 
+---------------------------------------------------------
+![SPFD54124B Display](images/photo_2025-11-08_11-52-28.jpg)
+---------------------------------------------------------
 
 برد ESP32-S2	
-![ESP32-S2 Mini Pinout](images/photo_2025-11-08_11-52-31.jpg)
 
+---------------------------------------------------------
+![ESP32-S2 Mini Pinout](images/photo_2025-11-08_11-52-31.jpg)
+---------------------------------------------------------
 
 
 برد ESP8266
-![ESP8266 Board](images/photo_2025-11-08_11-52-35.jpg)
 
+---------------------------------------------------------
+![ESP8266 Board](images/photo_2025-11-08_11-52-35.jpg)
+---------------------------------------------------------
 		
 
 
